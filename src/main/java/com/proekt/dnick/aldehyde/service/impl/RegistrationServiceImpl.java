@@ -1,11 +1,11 @@
 package com.proekt.dnick.aldehyde.service.impl;
 
-import com.proekt.dnick.aldehyde.constants.ErrorMessage;
-import com.proekt.dnick.aldehyde.constants.SuccessMessage;
+import com.proekt.dnick.aldehyde.configs.constants.ErrorMessage;
+import com.proekt.dnick.aldehyde.configs.constants.SuccessMessage;
 import com.proekt.dnick.aldehyde.model.Role;
 import com.proekt.dnick.aldehyde.model.User;
-import com.proekt.dnick.aldehyde.dto.response.MessageResponse;
-import com.proekt.dnick.aldehyde.dto.request.UserRequest;
+import com.proekt.dnick.aldehyde.model.dto.response.MessageResponse;
+import com.proekt.dnick.aldehyde.model.dto.request.UserRequest;
 import com.proekt.dnick.aldehyde.repository.UserRepository;
 import com.proekt.dnick.aldehyde.service.RegistrationService;
 import lombok.RequiredArgsConstructor;

@@ -18,8 +18,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User findByEmail(String email);
 
 
-    @Query("SELECT user.email FROM User user WHERE user.passwordResetCode = :code")
-    Optional<String> getEmailByPasswordResetCode(String code);
 
     @EntityGraph(attributePaths = "roles")
     @Query("SELECT user FROM User user WHERE " +

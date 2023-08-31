@@ -1,8 +1,8 @@
 package com.proekt.dnick.aldehyde.service.impl;
 
-import com.proekt.dnick.aldehyde.constants.ErrorMessage;
+import com.proekt.dnick.aldehyde.configs.constants.ErrorMessage;
 import com.proekt.dnick.aldehyde.model.Furniture;
-import com.proekt.dnick.aldehyde.dto.request.SearchRequest;
+import com.proekt.dnick.aldehyde.model.dto.request.SearchRequest;
 import com.proekt.dnick.aldehyde.repository.FurnitureRepository;
 import com.proekt.dnick.aldehyde.service.FurnitureService;
 import lombok.RequiredArgsConstructor;

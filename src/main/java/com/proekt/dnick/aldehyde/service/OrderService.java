@@ -3,7 +3,7 @@ package com.proekt.dnick.aldehyde.service;
 import com.proekt.dnick.aldehyde.model.Order;
 import com.proekt.dnick.aldehyde.model.Furniture;
 import com.proekt.dnick.aldehyde.model.User;
-import com.proekt.dnick.aldehyde.dto.request.OrderRequest;
+import com.proekt.dnick.aldehyde.model.dto.request.OrderRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

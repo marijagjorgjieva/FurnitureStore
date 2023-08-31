@@ -50,9 +50,6 @@ public class User {
     @Column(name = "activation_code")
     private String activationCode;
 
-    @Column(name = "password_reset_code")
-    private String passwordResetCode;
-
     @Column(name = "active")
     private boolean active;
 

@@ -1,14 +1,14 @@
 package com.proekt.dnick.aldehyde.service.impl;
 
-import com.proekt.dnick.aldehyde.constants.ErrorMessage;
-import com.proekt.dnick.aldehyde.constants.SuccessMessage;
+import com.proekt.dnick.aldehyde.configs.constants.ErrorMessage;
+import com.proekt.dnick.aldehyde.configs.constants.SuccessMessage;
 import com.proekt.dnick.aldehyde.model.Order;
 import com.proekt.dnick.aldehyde.model.Furniture;
 import com.proekt.dnick.aldehyde.model.User;
-import com.proekt.dnick.aldehyde.dto.request.FurnitureRequest;
-import com.proekt.dnick.aldehyde.dto.request.SearchRequest;
-import com.proekt.dnick.aldehyde.dto.response.MessageResponse;
-import com.proekt.dnick.aldehyde.dto.response.UserInfoResponse;
+import com.proekt.dnick.aldehyde.model.dto.request.FurnitureRequest;
+import com.proekt.dnick.aldehyde.model.dto.request.SearchRequest;
+import com.proekt.dnick.aldehyde.model.dto.response.MessageResponse;
+import com.proekt.dnick.aldehyde.model.dto.response.UserInfoResponse;
 import com.proekt.dnick.aldehyde.repository.OrderRepository;
 import com.proekt.dnick.aldehyde.repository.FurnitureRepository;
 import com.proekt.dnick.aldehyde.repository.UserRepository;
@@ -117,7 +117,7 @@ public class AdminServiceImpl implements AdminService {
                 uploadDir.mkdir();
             }
             String resultFilename = file.getOriginalFilename();
-            file.transferTo(new File(uploadPath + "/" + resultFilename));
+            //file.transferTo(new File(uploadPath + "/" + resultFilename));
             furniture.setFilename(resultFilename);
 
         }

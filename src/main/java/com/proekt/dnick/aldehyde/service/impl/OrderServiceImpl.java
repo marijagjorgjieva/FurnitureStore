@@ -1,10 +1,10 @@
 package com.proekt.dnick.aldehyde.service.impl;
 
-import com.proekt.dnick.aldehyde.constants.ErrorMessage;
+import com.proekt.dnick.aldehyde.configs.constants.ErrorMessage;
 import com.proekt.dnick.aldehyde.model.Order;
 import com.proekt.dnick.aldehyde.model.Furniture;
 import com.proekt.dnick.aldehyde.model.User;
-import com.proekt.dnick.aldehyde.dto.request.OrderRequest;
+import com.proekt.dnick.aldehyde.model.dto.request.OrderRequest;
 import com.proekt.dnick.aldehyde.repository.OrderRepository;
 import com.proekt.dnick.aldehyde.service.OrderService;
 import com.proekt.dnick.aldehyde.service.UserService;
