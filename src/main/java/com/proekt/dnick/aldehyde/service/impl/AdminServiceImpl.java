@@ -111,14 +111,14 @@ public class AdminServiceImpl implements AdminService {
         String rootPath = System.getProperty("user.dir");
         String uploadPath = rootPath + "/src/main/resources/uploads";
         if (file != null && !file.getOriginalFilename().isEmpty()) {
-            File uploadDir = new File(uploadPath);
+           // File uploadDir = new File(uploadPath);
 
-            if (!uploadDir.exists()) {
-                uploadDir.mkdir();
-            }
+          //  if (!uploadDir.exists()) {
+              //  uploadDir.mkdir();
+            //}
             String resultFilename = file.getOriginalFilename();
             //file.transferTo(new File(uploadPath + "/" + resultFilename));
-            furniture.setFilename(resultFilename);
+            furniture.setFilename("livingroom.jpg");
 
         }
         furnitureRepository.save(furniture);
