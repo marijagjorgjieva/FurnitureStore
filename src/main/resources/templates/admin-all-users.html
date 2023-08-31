@@ -1,0 +1,53 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common-fragments :: head"></head>
+<body>
+<div th:insert="~{fragments/common-fragments :: scripts}"></div>
+<div th:replace="fragments/common-fragments :: navbar"></div>
+<div class="bg-black">
+    <div class="py-5">
+        <div class="container py-5 srednotemno shadow-sm card-height">
+            <div class="row mx-3">
+                <th:block th:replace="fragments/account-fragments :: account-sidebar"/>
+                <div class="col-md-10"  style="color:white; ">
+                    <th:block th:replace="fragments/common-fragments :: info-title(
+                        text='Листа на сите корисници',
+                    )"/>
+
+                    <div th:insert="~{fragments/common-fragments :: pagination}"></div>
+                    <th:block th:if="${page.getContent().size() == 0}"
+                              th:insert="~{fragments/common-fragments :: empty-result(text='Users not found')}"/>
+                    <table  style="color:white; " th:unless="${page.getContent().size() == 0}" class="table mt-4 border text-center">
+                        <thead class="table-active">
+                        <tr>
+                            <th>ИД</th>
+                            <th>Име</th>
+                            <th>E-mail</th>
+                            <th>Улога</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody th:each="user : ${page.getContent()}">
+                        <tr>
+                            <th th:text="${user.getId()}"></th>
+                            <th th:text="${user.getFirstName()}"></th>
+                            <th th:text="${user.getEmail()}"></th>
+                            <th th:text="${user.getRoles().iterator().next()}"></th>
+                            <th>
+                                <a th:href="@{/admin/user/{userId} (userId = ${user.getId()})}">
+                                    Show more
+                                </a>
+                            </th>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div th:unless="${page.getContent().size() == 0}"
+                         th:insert="~{fragments/common-fragments :: pagination}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="~{fragments/common-fragments :: footer}"></footer>
+</body>
+</html>

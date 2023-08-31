@@ -1,0 +1,94 @@
+<th:block th:fragment="account-sidebar" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <div class="col-md-2" style="color:white; ">
+        <h4>
+            Моја сметка
+        </h4>
+        <a style="color:white; " class="account-sidebar-link nav-link" href="/user/info">Мои податоци</a>
+        <th:block sec:authorize="hasAuthority('ADMIN')" >
+            <a style="color:white; " class="account-sidebar-link nav-link" href="/admin/add/furniture">Додади мебел</a>
+            <a style="color:white; " class="account-sidebar-link nav-link" href="/admin/furnitures">Листа на мебел</a>
+            <a style="color:white; " class="account-sidebar-link nav-link" href="/admin/orders">Листа на нарачки</a>
+            <a style="color:white; " class="account-sidebar-link nav-link" href="/admin/users">Листа на корисници</a>
+        </th:block>
+        <th:block sec:authorize="hasAuthority('USER')">
+            <a style="color:white; " class="account-sidebar-link nav-link" href="/order/user/orders">Мои нарачки</a>
+        </th:block>
+    </div>
+</th:block>
+
+<th:block th:fragment="edit-furniture-input">
+    <div class="form-group row">
+        <label class="col-sm-4 font-weight-bold col-form-label" th:text="${title} + ':'"></label>
+        <div class="col-sm-8">
+            <input
+                    type="text"
+                    th:name="${name}"
+                    th:value="${value}"
+                    class="form-control" th:classappend="${error} ? ' is-invalid'"
+            />
+            <div th:if="${error}" class="invalid-feedback" th:text="${error}"></div>
+        </div>
+    </div>
+</th:block>
+
+<th:block th:fragment="edit-furniture-select">
+    <div class="form-group row">
+        <label class="col-sm-4 font-weight-bold col-form-label" th:text="${title} + ':'"></label>
+        <div class="col-sm-8">
+            <select th:name="${name}" class="form-control" th:classappend="${error} ? ' is-invalid'">
+                <option th:each="option : ${options}" th:value="${option}" th:text="${option}"
+                        th:selected="${value == option}"></option>
+            </select>
+            <div th:if="${error}" class="invalid-feedback" th:text="${error}"></div>
+        </div>
+    </div>
+</th:block>
+
+<th:block th:fragment="add-furniture-input">
+    <div class="col">
+        <label th:text="${title} + ':'"></label>
+        <input
+                type="text"
+                th:name="${name}"
+                th:placeholder="${placeholder}"
+                th:value="${value}"
+                class="form-control" th:classappend="${error} ? ' is-invalid'"
+        />
+        <div th:if="${error}" class="invalid-feedback" th:text="${error}"></div>
+    </div>
+</th:block>
+
+<th:block th:fragment="add-furniture-select">
+    <div class="col">
+        <label th:text="${title} + ':'"></label>
+        <select th:name="${name}" class="form-control" th:classappend="${error} ? ' is-invalid'">
+            <option hidden value=""></option>
+            <option th:each="option : ${options}" th:value="${option}" th:text="${option}"></option>
+        </select>
+        <div th:if="${error}" class="invalid-feedback" th:text="${error}"></div>
+    </div>
+</th:block>
+
+<th:block th:fragment="user-info">
+    <div class="col-md-4 mb-5"  style="color:white; ">
+        <th:block th:replace="fragments/common-fragments :: info-title(
+            text='Мои податоци',
+        )"/>
+        <th:block th:replace="fragments/common-fragments :: alert-message"/>
+        <th:block th:replace="fragments/common-fragments :: data-item(title='Емаил', text=${user.getEmail()})" />
+        <th:block th:replace="fragments/common-fragments :: data-item(title='Име ', text=${user.getFirstName()})" />
+        <th:block th:replace="fragments/common-fragments :: data-item(title='Град', text=${user.getCity()})" />
+        <th:block th:replace="fragments/common-fragments :: data-item(title='Адреса', text=${user.getAddress()})" />
+        <th:block th:replace="fragments/common-fragments :: data-item(title='Телефонски број', text=${user.getPhoneNumber()})" />
+        <th:block th:replace="fragments/common-fragments :: data-item(title='Поштенски код', text=${user.getPostIndex()})" />
+        <a th:with="isUserEditOpen=${#request.getRequestURI() == '/user/info/edit'}"
+           th:href="@{${isUserEditOpen} ? '/user/info' : '/user/info/edit'}"
+           role="button">
+            <th:block th:replace="fragments/common-fragments :: icon-button(
+                text=(${isUserEditOpen} ? 'Hide' : 'Edit'),
+                icon=(${isUserEditOpen} ? 'fas fa-eye-slash mr-2' : 'fas fa-edit mr-2'),
+                buttonClassName='mt-2'
+            )"/>
+        </a>
+    </div>
+</th:block>

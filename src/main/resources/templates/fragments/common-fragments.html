@@ -1,0 +1,245 @@
+<!--Header-->
+<head th:fragment="head" xmlns:th="http://www.thymeleaf.org">
+    <title>Furniture</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Jost:wght@300&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<!--Scripts-->
+<div th:fragment="scripts" xmlns:th="http://www.thymeleaf.org">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+</div>
+
+<!--Navbar-->
+<!--<div th:fragment="navbar" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <div class="container-fluid bg-black header-top d-none d-md-block pb-5 pt-5">
+        <img id="logo-main" src="https://i.ibb.co/fqYvrL8/LOGO4.jpg" class="rounded mx-auto d-block"/>
+    </div>
+    <div class="container-fluid bg-black">
+        <nav id="navbar-main" class="container navbar navbar-expand-lg bg-black text-white navbar-main">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link pl-5 pr-5" href="/">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-5 pr-5" href="/furniture">FURNITURES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-5 pr-5" href="/user/contacts">CONTACTS</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart">
+                            <i class="fas fa-shopping-cart fa-lg pl-5"></i>
+                        </a>
+                    </li>
+                    <th:block sec:authorize="isAuthenticated()">
+                        <li class="nav-item">
+                            <a class="nav-link pl-5" href="/user/account">
+                                <i class="fas fa-user mr-2"></i>
+                                MY ACCOUNT
+                            </a>
+                        </li>
+                        <form id="logout" action="/logout" method="post">
+                            <li class="nav-item">
+                                <a class="nav-link" href=# onclick="document.getElementById('logout').submit()">
+                                    <input type="hidden"/>
+                                    <i class="fas fa-sign-out-alt mr-2"></i>
+                                    EXIT
+                                </a>
+                            </li>
+                        </form>
+                    </th:block>
+                    <th:block sec:authorize="!isAuthenticated()">
+                        <li class="nav-item">
+                            <a class="nav-link pl-5" href="/login">
+                                <i class="fas fa-sign-in-alt mr-2"></i>
+                                LOGIN
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-5" href="/registration">
+                                <i class="fas fa-user-plus mr-2"></i>
+                                REGISTRATION
+                            </a>
+                        </li>
+                    </th:block>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>-->
+<div class="nr" th:fragment="navbar" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <th:block sec:authorize="!isAuthenticated()">
+        <div class="navauth">
+            <a class="itemnav" href="/login">
+
+                Најава
+            </a>
+            <a class="itemnav" href="/registration">
+                Регистрација
+            </a>
+
+        </div>
+    </th:block>
+    <th:block sec:authorize="isAuthenticated()">
+        <div class="navauth">
+
+            <a class="itemnav" href="/user/account">
+                Моја сметка
+            </a>
+            <a class="itemnav" href="/cart">
+                Моја кошничка
+            </a>
+            <form class="itemnav" action="/logout" method="post" id="logoutForm">
+                <a class="itemnav" href="#" onclick="document.getElementById('logoutForm').submit(); return false;">
+                    Одјави се
+                </a>
+            </form>
+
+        </div>
+    </th:block>
+    <div class="navbar">
+        <div class="logo">
+            <img id="logoimg" src="https://i.ibb.co/CsB678B/logo.png" alt="Logo">
+        </div>
+        <div class="links">
+            <a th:href="${'/furniture'}">Дома</a>
+            <a th:href="${'/furniture?brands=Дневни'}">Дневни</a>
+            <a th:href="${'/furniture?brands=Кујни'}">Кујни</a>
+            <a th:href="${'/furniture?brands=Спални'}">Спални</a>
+            <a th:href="${'/furniture?brands=Детски'}">Детски</a>
+            <a th:href="${'/furniture?brands=Претсобја'}">Претсобја</a>
+        </div>
+    </div>
+</div>
+
+<!--carousel-indicators-->
+<div th:fragment="carousel-indicators (id)" class="container pt-3">
+    <ol class="carousel-indicators">
+        <li th:data-target="${id}" data-slide-to="0" class="active" style="background-color: black"></li>
+        <li th:data-target="${id}" data-slide-to="1" style="background-color: black"></li>
+        <li th:data-target="${id}" data-slide-to="2" style="background-color: black"></li>
+    </ol>
+</div>
+
+<!--pagination-->
+<th:block th:fragment="pagination">
+    <ul class="pagination d-flex justify-content-between " th:classappend="${class}"
+        th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}">
+        <div class="d-flex">
+            <li class="page-item disabled">
+                <a style="background-color: darkgoldenrod; border: white; color: black; font-weight: bold" class="page-link " href="#" tabindex="-1">Страници</a>
+            </li>
+            <th:block th:each="i : ${pagination}">
+                <th:block th:if="${i - 1 == page.getNumber()}">
+                    <li class="page-item active">
+                        <a class="page-link srednotemno border-white text-dark" href="#" th:text="${i}"></a>
+                    </li>
+                </th:block>
+                <th:block th:if="${i != -1 and i - 1 != page.getNumber()}">
+                    <li class="page-item">
+                        <a class="page-link text-dark"
+                           th:href="${urlBuilder.replaceQueryParam('page', (i - 1)).replaceQueryParam('size', page.getSize()).toUriString()}"
+                           th:text="${i}"></a>
+                    </li>
+                </th:block>
+                <th:block th:if="${i == -1}">
+                    <li class="page-item disabled">
+                        <a class="page-link text-dark" href="#">...</a>
+                    </li>
+                </th:block>
+            </th:block>
+        </div>
+        <div class="d-flex">
+            <li class="page-item disabled ml-5">
+                <a class="page-link text-dark" style="background-color: DARKGOLDENROD; border: white; color: black; font-weight: bold" href="#" tabindex="-1">Производи на страна</a>
+            </li>
+            <th:block th:each="c : ${#numbers.sequence(12, 36, 12)}">
+                <th:block th:if="${c} == ${page.getSize()}">
+                    <li style="background-color: DARKGOLDENROD; border: white; color: black; font-weight: bold"  class="page-item active">
+                        <a style="background-color: DARKGOLDENROD; border: white; color: black; font-weight: bold" class="page-link srednotemno border-white" href="#" th:text="${c}"></a>
+                    </li>
+                </th:block>
+                <th:block th:unless="${c} == ${page.getSize()}">
+                    <li class="page-item">
+                        <a style="background-color: DARKGOLDENROD; border: white; color: black; font-weight: bold" class="page-link text-dark"
+                           th:href="${urlBuilder.replaceQueryParam('page', 0).replaceQueryParam('size', c).toUriString()}"
+                           th:text="${c}"></a>
+                    </li>
+                </th:block>
+            </th:block>
+        </div>
+    </ul>
+</th:block>
+
+<!--search-->
+
+
+<!--footer-->
+<footer th:fragment="footer" class="page-footer p-5 bg-black text-white">
+    <div class="container" style="display: flex; justify-content: center; align-items: center;">
+        <img id="logoimg2" src="https://i.ibb.co/CsB678B/logo.png" alt="Logo">
+    </div>
+
+</footer>
+
+<!-- info-title -->
+<th:block th:fragment="info-title" >
+    <h4 th:class="${titleClass}" style="color: white">
+        <th:block th:text="${text}"></th:block>
+    </h4>
+</th:block>
+
+<!-- icon-button -->
+<th:block th:fragment="icon-button">
+    <button type="submit" class="btn btn-dark " th:classappend="${buttonClassName}">
+
+        <th:block th:text="${text}"></th:block>
+    </button>
+</th:block>
+
+<!-- alert-message -->
+<th:block th:fragment="alert-message">
+    <div th:if="${messageType}" class="alert " th:classappend="${messageType}" th:text="${message}" role="alert"></div>
+</th:block>
+
+<!-- data-item -->
+<th:block th:fragment="data-item">
+    <p class="data_item">
+        <th:block th:text="${title + ':'}"></th:block>
+        <span th:text="${text}" class="data_text"></span>
+    </p>
+</th:block>
+
+<!-- empty-result -->
+<th:block th:fragment="empty-result(text)">
+    <div class="col-lg-12 my-5">
+        <h3 class="text-center mx-5" th:text="${text}"></h3>
+    </div>
+</th:block>
+
+

@@ -1,0 +1,67 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common-fragments :: head"></head>
+<body>
+<div th:insert="~{fragments/common-fragments :: scripts}"></div>
+<div th:replace="fragments/common-fragments :: navbar"></div>
+<div id="container" class="bg-black">
+    <div class="py-5">
+        <div class="container py-1 srednotemno shadow-sm card-height rawrXD">
+            <div th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']}" class="alert alert-danger col-sm-8 mt-3"
+                 role="alert">
+                Invalid Email Or Password
+            </div>
+            <th:block th:replace="fragments/common-fragments :: alert-message"/>
+            <form method="post" action="/login" style="color: black">
+                <div class="container mt-5 mb-5 center-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="mr-2 text-center font-weight-bold" style="font-size: 24px;">
+                                <i class=""></i>
+                                НАЈАВА
+                            </h4>
+                            <hr/>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label">Е-маил: </label>
+                                <i class="fas fa-envelope" style="position: relative; top: 8px"></i>
+                                <div class="col-sm-7">
+                                    <input type="email" name="username" class="form-control"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label">Лозинка: </label>
+                                <i class="fas fa-lock" style="position: relative; top: 8px"></i>
+                                <div class="col-sm-7">
+                                    <input type="password" name="password" class="form-control"/>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-dark  btn-block">
+                                        Најави се
+                                    </button>
+                                </div>
+
+                                <div class="col-md-12 mt-1">
+                                    <a href="/registration">
+                                        <button type="button" class="btn btn-dark btn-block">
+                                            Регистрирај се
+                                        </button>
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer th:insert="~{fragments/common-fragments :: footer}"></footer>
+</body>
+</html>

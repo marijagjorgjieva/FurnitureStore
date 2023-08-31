@@ -1,0 +1,100 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common-fragments :: head"></head>
+<body>
+<div th:insert="~{fragments/common-fragments :: scripts}"></div>
+<div th:replace="fragments/common-fragments :: navbar"></div>
+<div id="container" class="bg-black">
+    <div class="py-5">
+        <div class="container py-5 srednotemno shadow-sm card-height">
+            <div class="row mx-3" style="color: white">
+                <th:block th:replace="fragments/account-fragments :: account-sidebar"/>
+                <div class="col-md-9 mb-5">
+                    <th:block th:replace="fragments/common-fragments :: info-title(
+                        text='Додади мебел',
+
+                    )"/>
+                    <br/>
+                    <form method="post" style="color: white" action="/admin/add/furniture" enctype="multipart/form-data">
+                        <div class="form row" >
+                            <th:block th:replace="fragments/account-fragments :: add-furniture-input(
+                                title='Име',
+                                name='furnitureTitle',
+                                placeholder='Внеси име',
+                                value=(${furniture} ? ${furniture.furnitureTitle} : ''),
+                                error=(${furnitureTitleError})
+                            )"/>
+                            <th:block th:replace="fragments/account-fragments :: add-furniture-input(
+                                title='За каде?',
+                                name='brand',
+                                placeholder='Внеси тип на мебел',
+                                value=(${furniture} ? ${furniture.brand} : ''),
+                                error=(${brandError})
+                            )"/>
+                        </div>
+                        <div class="form row mt-3">
+                            <th:block th:replace="fragments/account-fragments :: add-furniture-input(
+                                title='Година на производство',
+                                name='year',
+                                placeholder='Година на производство',
+                                value=(${furniture} ? ${furniture.year} : ''),
+                                error=(${yearError})
+                            )"/>
+                            <th:block th:replace="fragments/account-fragments :: add-furniture-input(
+                                title='Држава на производство',
+                                name='country',
+                                placeholder='Држава на производство',
+                                value=(${furniture} ? ${furniture.country} : ''),
+                                error=(${countryError})
+                            )"/>
+                        </div>
+                        <div class="form row mt-3">
+                            <th:block th:replace="fragments/account-fragments :: add-furniture-select(
+                                title='Дали е премиум?',
+                                name='type',
+                                options=(${ {'Premium','Non-premium'} }),
+                                error=(${typeError})
+                            )"/>
+                            <th:block th:replace="fragments/account-fragments :: add-furniture-input(
+                                title='Големина',
+                                name='volume',
+                                placeholder='Внеси големина',
+                                value=(${furniture} ? ${furniture.volume} : ''),
+                                error=(${volumeError})
+                            )"/>
+                        </div>
+                        <div class="form row mt-3">
+                            <th:block th:replace="fragments/account-fragments :: add-furniture-select(
+                                title='Материјал',
+                                name='material',
+                                options=(${ {'Иверка', 'Оплеменeт медијапан', 'Фурниран медијапан','Масивно дрво','Кожа','Челик','Поликарбонат :D'} }),
+                                error=(${materialError})
+                            )"/>
+
+                        </div>
+                        <div class="form row mt-3">
+                            <th:block th:replace="fragments/account-fragments :: add-furniture-input(
+                                title='Цена',
+                                name='price',
+                                placeholder='Внеси цена',
+                                value=(${furniture} ? ${furniture.price} : ''),
+                                error=(${priceError})
+                            )"/>
+                            <div class="col" style="margin-top: 35px">
+                                <input type="file" name="file"/>
+                            </div>
+                        </div>
+                        <th:block th:replace="fragments/common-fragments :: icon-button(
+                            text='Add',
+                            buttonClassName='mt-3',
+                            icon='fas fa-plus-square mr-2'
+                        )"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="~{fragments/common-fragments :: footer}"></footer>
+</body>
+</html>

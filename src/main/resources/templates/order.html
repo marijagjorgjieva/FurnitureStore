@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common-fragments :: head"></head>
+<body>
+<div th:insert="~{fragments/common-fragments :: scripts}"></div>
+<div th:replace="fragments/common-fragments :: navbar"></div>
+<div id="container" class="bg-black">
+    <div class="py-5">
+        <div class="container py-5 srednotemno shadow-sm card-height" style="color: white">
+            <div class="row mx-3">
+                <th:block th:replace="fragments/account-fragments :: account-sidebar"/>
+                <div class="col-md-10">
+                    <div class="container mb-5">
+                        <th:block th:replace="fragments/common-fragments :: info-title(
+                            text='Order #' + ${order.getId()},
+                            titleClass='text-center',
+                            icon='fas fa-shopping-bag'
+                        )"/>
+                        <div class="row border my-5 px-5 py-3">
+                            <div class="col-md-6">
+                                <h5 class="manage_user_order_subtitle">
+                                    Информации за купувачот
+                                </h5>
+                                <th:block th:replace="fragments/common-fragments :: data-item(title='Име', text=${order.getFirstName()})"/>
+                                <th:block th:replace="fragments/common-fragments :: data-item(title='Емаил', text=${order.getEmail()})"/>
+                                <th:block th:replace="fragments/common-fragments :: data-item(title='Телефонски број ', text=${order.getPhoneNumber()})"/>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="manage_user_order_subtitle">
+                                    Информации за нарачката
+                                </h5>
+                                <th:block th:replace="fragments/common-fragments :: data-item(title='ИД на нарачка', text=${order.getId()})"/>
+                                <th:block th:replace="fragments/common-fragments :: data-item(title='Датум', text=${#temporals.format(order.getDate(), 'yyyy-MM-dd HH:mm')})"/>
+                                <h4 class="manage_user_order_summary">
+                                    Цена
+                                    <span class="manage_user_order_summary_price" th:text="'$' + ${order.getTotalPrice()} + '0'"></span>
+                                </h4>
+                            </div>
+                        </div>
+                        <table class="table border text-center">
+                            <thead class="table-active">
+                            <tr>
+                                <th>ИД на мебел</th>
+                                <th>Тип на мебел</th>
+                                <th>Име</th>
+                                <th>Цена</th>
+                            </tr>
+                            </thead>
+                            <tbody th:each="furniture : ${order.getFurnitures()}">
+                            <tr>
+                                <th>
+                                    <a th:href="@{/furniture/{furnitureId} (furnitureId = ${furniture.getId()})}" th:text="${furniture.getId()}"></a>
+                                </th>
+                                <th th:text="${furniture.getBrand()}"></th>
+                                <th th:text="${furniture.getFurnitureTitle()}"></th>
+                                <th th:text="'$' + ${furniture.getPrice()} + '.00'"></th>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="~{fragments/common-fragments :: footer}"></footer>
+</body>
+</html>

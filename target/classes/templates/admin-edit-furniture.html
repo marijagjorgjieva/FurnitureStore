@@ -1,0 +1,88 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common-fragments :: head"></head>
+<body>
+<div th:insert="~{fragments/common-fragments :: scripts}"></div>
+<div th:replace="fragments/common-fragments :: navbar"></div>
+<div class="bg-black">
+    <div class="py-5">
+        <div class="container py-5 srednotemno shadow-sm card-height">
+            <div class="row mx-3">
+                <th:block th:replace="fragments/account-fragments :: account-sidebar"/>
+                <div class="col-md-9 mb-5">
+                    <th:block th:replace="fragments/common-fragments :: info-title(text='Edit furniture', icon='fas fa-edit mr-2')"/>
+                    <form method="post" action="/admin/edit/furniture" enctype="multipart/form-data">
+                        <div class="row mt-5">
+                            <div class="col-md-6">
+                                <th:block th:replace="fragments/account-fragments :: edit-furniture-input(
+                                    title='Име ',
+                                    name='furnitureTitle',
+                                    value=(${furniture.getFurnitureTitle()}),
+                                    error=(${furnitureTitleError})
+                                )"/>
+                                <th:block th:replace="fragments/account-fragments :: edit-furniture-input(
+                                    title='Тип',
+                                    name='brand',
+                                    value=(${furniture.getBrand()}),
+                                    error=(${brandError})
+                                )"/>
+                                <th:block th:replace="fragments/account-fragments :: edit-furniture-input(
+                                    title='Година',
+                                    name='year',
+                                    value=(${furniture.getYear()}),
+                                    error=(${yearError})
+                                )"/>
+                                <th:block th:replace="fragments/account-fragments :: edit-furniture-input(
+                                    title='Држаба',
+                                    name='country',
+                                    value=(${furniture.getCountry()}),
+                                    error=(${countryError})
+                                )"/>
+                                <th:block th:replace="fragments/account-fragments :: edit-furniture-select(
+                                    title='Дали е премиум',
+                                    name='type',
+                                    options=(${ {'Premium','Non-premium'} }),
+                                    value=(${furniture.getType()}),
+                                    error=(${typeError})
+                                )"/>
+                                <th:block th:replace="fragments/account-fragments :: edit-furniture-input(
+                                    title='Volume',
+                                    name='volume',
+                                    value=(${furniture.getVolume()}),
+                                    error=(${volumeError})
+                                )"/>
+                                <th:block th:replace="fragments/account-fragments :: edit-furniture-select(
+                                    title='Material',
+                                    name='material',
+                                    options=(${ {'Иверка', 'Оплеменeт медијапан', 'Фурниран медијапан','Масивно дрво','Кожа','Челик','Поликарбонат :D'} }),
+                                    value=(${furniture.getMaterial()}),
+                                    error=(${materialError})
+                                )"/>
+
+                                <th:block th:replace="fragments/account-fragments :: edit-furniture-input(
+                                    title='Price',
+                                    name='price',
+                                    value=(${furniture.getPrice()}),
+                                    error=(${priceError})
+                                )"/>
+                            </div>
+                            <div class="col-md-6">
+                                <div th:if="${furniture.getFilename()}">
+                                    <img th:src="@{/uploads/{path} (path = ${furniture.getFilename()})}"
+                                         class="rounded mx-auto w-100 mb-2" th:alt="${furniture.getFilename()}" />
+                                </div>
+                                <input type="file" name="file"/>
+                            </div>
+                        </div>
+                        <input type="hidden" name="id" th:value="${furniture.getId()}"/>
+                        <input type="hidden" name="filename" th:value="${furniture.getFilename()}"/>
+                        <th:block th:replace="fragments/common-fragments :: icon-button(text='Edit', icon='fas fa-edit mr-2')"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="~{fragments/common-fragments :: footer}"></footer>
+</body>
+</html>

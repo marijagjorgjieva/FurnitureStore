@@ -1,0 +1,108 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common-fragments :: head"></head>
+<body>
+<div th:insert="~{fragments/common-fragments :: scripts}"></div>
+<div th:replace="fragments/common-fragments :: navbar"></div>
+<div id="container">
+    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="position: relative;">
+                <a th:href="@{/furniture/109}">
+                    <img class="d-block" style="width: 70vw; margin: auto"
+                         src="https://i.ibb.co/KWLMCqH/living-room-white-textured-rug-Ci-F-0-XRK7-VA0sclps-Cm2-P-2000-6cf12aa58af6446586aaf4b48417b434.jpg"
+                         alt="First slide">
+                </a>
+                <div class="carousel-text-overlay"
+                     style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; background-color: rgba(0, 0, 0, 0.5); padding: 10px; font-size: large">
+                    Мебел од кожа
+                </div>
+            </div>
+
+            <div class="carousel-item " style="position: relative;">
+                <a th:href="@{/furniture/109}">
+                    <img class="d-block" style="width: 70vw; margin: auto" src="https://i.ibb.co/kBb7Xdm/kujna.webp"
+                         alt="Second slide">
+                </a>
+                <div class="carousel-text-overlay"
+                     style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; background-color: rgba(0, 0, 0, 0.5); padding: 10px; font-size: large">
+                    Мебел од метал
+                </div>
+            </div>
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card mb-5">
+                    <a th:href="${'/furniture?brands=Дневни'}">
+                        <img alt="nema" class="img-fluid" src="https://i.ibb.co/XFLcb1z/livingroom.jpg">
+                        <div class="image-overlay">Дневни</div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-5">
+                    <a th:href="${'/furniture?brands=Кујни'}">
+                        <img alt="nema" class="img-fluid" src="https://i.ibb.co/wQSnPJf/kujna.jpg">
+                        <div class="image-overlay">Кујни</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card mb-5">
+                    <a th:href="${'/furniture?brands=Спални'}">
+                        <img alt="nema" class="img-fluid" src="https://i.ibb.co/swbtFKS/spalna.jpg">
+                        <div class="image-overlay">Спални</div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-5">
+                    <a th:href="${'/furniture?brands=Детски'}">
+                        <img alt="nema" class="img-fluid" src="https://i.ibb.co/jvBDWNZ/detska.jpg">
+                        <div class="image-overlay">Детски</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card mb-5">
+                    <a th:href="${'/furniture?brands=Претсобја'}">
+                        <img alt="nema" class="img-fluid" src="https://i.ibb.co/GWjsGGw/predsobje.jpg">
+                        <div class="image-overlay">Претсобја</div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-5">
+                    <a th:href="${'/furniture'}">
+                        <img alt="nema" class="img-fluid" src="https://i.ibb.co/YhRpGps/se.jpg">
+                        <div class="image-overlay">Сите</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+<footer th:insert="~{fragments/common-fragments :: footer}"></footer>
+</body>
+</html>

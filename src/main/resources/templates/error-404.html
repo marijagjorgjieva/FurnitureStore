@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common-fragments :: head"></head>
+<body>
+<div th:insert="~{fragments/common-fragments :: scripts}"></div>
+<div th:replace="fragments/common-fragments :: navbar"></div>
+<div class="bg-dark">
+    <div class="py-5">
+        <div class="container py-5 srednotemno shadow-sm card-height" style="color:white;">
+            <div class="row mx-3">
+                <div class="container mb-5">
+                    <h2 class="text-center mb-5">
+                        <th:block th:text="${errorMessage}"/>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="~{fragments/common-fragments :: footer}"></footer>
+</body>
+</html>

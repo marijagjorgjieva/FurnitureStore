@@ -1,0 +1,48 @@
+<div th:fragment="furniture-item (furniture)" class="col-lg-3 d-flex align-items-stretch">
+    <div class="card mb-5 shadow" th:if="${furniture.getFilename()}">
+        <img th:src="@{/uploads/{path} (path = ${furniture.getFilename()})}" class="rounded mx-auto w-50" alt="dsa">
+        <div class="card-body text-center">
+            <h5 th:text="${furniture.getFurnitureTitle()}"></h5>
+            <h6 th:text="${furniture.getBrand()}"></h6>
+            <h6>$<span th:text="${furniture.getPrice()}"></span>.00</h6>
+        </div>
+        <div class="text-center align-items-end mb-3">
+            <a th:href="@{/furniture/{furnitureId} (furnitureId = ${furniture.getId()})}" class="btn btn-dark">
+                SHOW MORE
+            </a>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="brand-item" class="col-2 float-left">
+    <a th:href="${'/furniture?brand=' + brand}">
+        <img class="img-fluid" th:src="${src}" alt="">
+    </a>
+</div>
+
+<div th:fragment="furnitures-brand-checkbox(brand)" class="checkbox">
+    <label>
+        <input th:value="${brand}" type="checkbox" name="brands" onChange="this.form.submit()"
+               th:checked="${searchRequest.getBrands() != null ? #arrays.contains(searchRequest.getBrands(), brand) : false}"/>
+        <span class="cr"><i class="cr-icon fas fa-check" style="color: darkgoldenrod"></i></span>
+        <th:block th:text="${brand}"></th:block>
+    </label>
+</div>
+
+<div th:fragment="furnitures-material-checkbox(material)" class="checkbox">
+    <label>
+        <input th:value="${material}" type="checkbox" name="material" onChange="this.form.submit()"
+               th:checked="${searchRequest.getMaterials() != null ? #arrays.contains(searchRequest.getMaterials(), material) : false}"/>
+        <span class="cr"><i class="cr-icon fas fa-check" style="color: darkgoldenrod"></i></span>
+        <th:block th:text="${#strings.capitalize(material)}"></th:block>
+    </label>
+</div>
+
+<div th:fragment="furnitures-price-checkbox" class="checkbox">
+    <label>
+        <input th:value="${startingPrice}" type="radio" name="price" onChange="this.form.submit()"
+               th:checked="${searchRequest.getPrice() != null ? startingPrice == searchRequest.getPrice() : false}"/>
+        <span class="cr"><i class="cr-icon fas fa-check" style="color: darkgoldenrod"></i></span>
+        <th:block th:text="${startingPrice == 0} ? 'секоја' : ${startingPrice} + ' - ' + ${endingPrice} + ' денари'"></th:block>
+    </label>
+</div>
