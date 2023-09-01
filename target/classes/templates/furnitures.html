@@ -18,24 +18,22 @@
                     <h5>Цена</h5>
                     <li class="active mb-2">
                         <ul class="list-unstyled">
-                            <li th:insert="fragments/furnitures-fragments :: furnitures-price-checkbox(startingPrice=0, endingPrice=999)"></li>
-                            <li th:insert="fragments/furnitures-fragments :: furnitures-price-checkbox(startingPrice=1000, endingPrice=4999)"></li>
-                            <li th:insert="fragments/furnitures-fragments :: furnitures-price-checkbox(startingPrice=5000, endingPrice=9999)"></li>
-                            <li th:insert="fragments/furnitures-fragments :: furnitures-price-checkbox(startingPrice=10000, endingPrice=19999)"></li>
-                            <li th:insert="fragments/furnitures-fragments :: furnitures-price-checkbox(startingPrice=20000, endingPrice=29999)"></li>
-                            <li th:insert="fragments/furnitures-fragments :: furnitures-price-checkbox(startingPrice=30000, endingPrice=50000)"></li>
+                            <li th:insert="fragments/furnitures-fragments :: furnitures-price-checkbox(startingPrice=0, endingPrice=999999)"></li>
+                            <li th:insert="fragments/furnitures-fragments :: furnitures-price-checkbox(startingPrice=1, endingPrice=6001)"></li>
+                            <li th:insert="fragments/furnitures-fragments :: furnitures-price-checkbox(startingPrice=12001, endingPrice=18001)"></li>
+                            <li th:insert="fragments/furnitures-fragments :: furnitures-price-checkbox(startingPrice=24001, endingPrice=30001)"></li>
+                            <li th:insert="fragments/furnitures-fragments :: furnitures-price-checkbox(startingPrice=36001, endingPrice=42001)"></li>
                         </ul>
                     </li>
                     <h5>Mатеријал</h5>
                     <li class="active mb-2">
                         <ul class="list-unstyled">
-                            <li th:insert="fragments/furnitures-fragments :: furnitures-material-checkbox('иверка')"></li>
-                            <li th:insert="fragments/furnitures-fragments :: furnitures-material-checkbox('оплеменeт медијапан')"></li>
-                            <li th:insert="fragments/furnitures-fragments :: furnitures-material-checkbox('фурниран медијапан')"></li>
-                            <li th:insert="fragments/furnitures-fragments :: furnitures-material-checkbox('масивно дрво')"></li>
-                            <li th:insert="fragments/furnitures-fragments :: furnitures-material-checkbox('кожа')"></li>
-                            <li th:insert="fragments/furnitures-fragments :: furnitures-material-checkbox('челик')"></li>
-                            <li th:insert="fragments/furnitures-fragments :: furnitures-material-checkbox('поликарбонат :D')"></li>
+                            <li th:insert="fragments/furnitures-fragments :: furnitures-material-checkbox('Иверка')"></li>
+                            <li th:insert="fragments/furnitures-fragments :: furnitures-material-checkbox('Фурниран медијапан')"></li>
+                            <li th:insert="fragments/furnitures-fragments :: furnitures-material-checkbox('Масивно дрво')"></li>
+                            <li th:insert="fragments/furnitures-fragments :: furnitures-material-checkbox('Кожа')"></li>
+                            <li th:insert="fragments/furnitures-fragments :: furnitures-material-checkbox('Челик')"></li>
+                            <li th:insert="fragments/furnitures-fragments :: furnitures-material-checkbox('Поликарбонат :D')"></li>
                         </ul>
                     </li>
                     <h5>За каде?</h5>
@@ -58,7 +56,7 @@
             <div class="mt-4 ml-1">
                 <th:block th:replace="~{fragments/common-fragments :: pagination(class='mx-3')}"/>
                 <div class="container-fluid">
-                    <div class="row" th:fragment="list">
+                    <div class="row" style="color:white;" th:fragment="list">
                         <th:block th:if="${page.getContent().size() == 0}"
                                   th:insert="~{fragments/common-fragments :: empty-result(text='Нема пронајден мебел')}"/>
                         <th:block th:unless="${page.getContent().size() == 0}"

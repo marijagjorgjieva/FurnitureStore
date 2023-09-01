@@ -8,7 +8,7 @@
         </div>
         <div class="text-center align-items-end mb-3">
             <a th:href="@{/furniture/{furnitureId} (furnitureId = ${furniture.getId()})}" class="btn btn-dark">
-                SHOW MORE
+                Прикажи повеќе
             </a>
         </div>
     </div>
@@ -32,9 +32,9 @@
 <div th:fragment="furnitures-material-checkbox(material)" class="checkbox">
     <label>
         <input th:value="${material}" type="checkbox" name="material" onChange="this.form.submit()"
-               th:checked="${searchRequest.getMaterials() != null ? #arrays.contains(searchRequest.getMaterials(), material) : false}"/>
+               th:checked="${searchRequest.getMaterials().size() == 6 ? false : #arrays.contains(searchRequest.getMaterials(), material)}"/>
         <span class="cr"><i class="cr-icon fas fa-check" style="color: darkgoldenrod"></i></span>
-        <th:block th:text="${#strings.capitalize(material)}"></th:block>
+        <th:block th:text="${material}"></th:block>
     </label>
 </div>
 

@@ -118,7 +118,7 @@ public class AdminServiceImpl implements AdminService {
             //}
             String resultFilename = file.getOriginalFilename();
             //file.transferTo(new File(uploadPath + "/" + resultFilename));
-            furniture.setFilename("livingroom.jpg");
+            furniture.setFilename("слика.jpg");
 
         }
         furnitureRepository.save(furniture);

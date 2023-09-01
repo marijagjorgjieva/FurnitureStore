@@ -5,7 +5,7 @@
 <div th:insert="~{fragments/common-fragments :: scripts}"></div>
 <div th:replace="fragments/common-fragments :: navbar"></div>
 <div id="container" class="bg-black">
-    <div class="py-5"  style=" color:white;">
+    <div class="py-5"  style=" color:black;">
         <div class="container py-5 srednotemno shadow-sm card-height">
             <p class="h4 mb-4 text-center">
                 Кошничка
@@ -14,7 +14,7 @@
                 <p>Кошничката е празна</p>
             </div>
             <div th:if="${furnitures.size() > 0}">
-                <div class="card mb-3 mx-auto" style="max-width: 940px;" th:each="furniture : ${furnitures}">
+                <div class="card mb-3 mx-auto" style="max-width: 940px; color:black" th:each="furniture : ${furnitures}">
                     <div class="row no-gutters">
                         <div class="col-2 mx-3 my-3">
                             <img th:src="${furniture.getFilename()}" class="img-fluid" alt="">
@@ -24,12 +24,12 @@
                                 <h5 class="card-title"
                                     th:text="${furniture.getBrand() + ' ' + furniture.getFurnitureTitle()}"></h5>
                                 <p class="card-text" th:text="${furniture.getType()}"></p>
-                                <p class="card-text"><span th:text="${furniture.getVolume()}"></span> ml.</p>
+                                <p class="card-text"><span th:text="${furniture.getVolume()}"></span> </p>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="card-body">
-                                <h5 class="card-title">$<span th:text="${furniture.getPrice()}"></span></h5>
+                                <h5 class="card-title"><span th:text="${furniture.getPrice()}">Денари</span></h5>
                                 <form class="d-inline" action="/cart/remove" method="post">
                                     <button class="btn btn-warning mb-2">
                                         Избриши
@@ -41,9 +41,9 @@
                     </div>
                 </div>
                 <hr class="my-3"/>
-                <div class="row">
+                <div class="row" style="color:white;">
                     <div class="col-9">
-                        <p class="h5 text-right">Вкупно: денари<span th:text="${#aggregates.sum(furnitures.![price])}"></span></p>
+                        <p class="h5 text-right">Вкупно: <span th:text="${#aggregates.sum(furnitures.![price])}">денари</span></p>
                     </div>
                     <div class="col-3">
                         <form action="/order" method="get" class="ml-3">

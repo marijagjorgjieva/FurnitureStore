@@ -8,7 +8,7 @@
     <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" style="position: relative;">
-                <a th:href="@{/furniture/109}">
+                <a th:href="@{/furniture?material=кожа}">
                     <img class="d-block" style="width: 70vw; margin: auto"
                          src="https://i.ibb.co/KWLMCqH/living-room-white-textured-rug-Ci-F-0-XRK7-VA0sclps-Cm2-P-2000-6cf12aa58af6446586aaf4b48417b434.jpg"
                          alt="First slide">
@@ -20,7 +20,7 @@
             </div>
 
             <div class="carousel-item " style="position: relative;">
-                <a th:href="@{/furniture/109}">
+                <a th:href="@{/furniture?material=челик}">
                     <img class="d-block" style="width: 70vw; margin: auto" src="https://i.ibb.co/kBb7Xdm/kujna.webp"
                          alt="Second slide">
                 </a>
@@ -42,7 +42,7 @@
     </div>
 
     <div class="container mt-5">
-        <div class="row">
+        <div class="row" style="color:white;">
             <div class="col-lg-6">
                 <div class="card mb-5">
                     <a th:href="${'/furniture?brands=Дневни'}">
@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" style="color:white;">
             <div class="col-lg-6">
                 <div class="card mb-5">
                     <a th:href="${'/furniture?brands=Спални'}">
@@ -80,7 +80,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" style="color:white;">
             <div class="col-lg-6">
                 <div class="card mb-5">
                     <a th:href="${'/furniture?brands=Претсобја'}">

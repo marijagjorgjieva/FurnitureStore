@@ -6,20 +6,20 @@
 <div th:replace="fragments/common-fragments :: navbar"></div>
 <div id="container" class="bg-black">
     <div class="container pt-5 pb-5 srednotemno shadow-sm">
-        <div class="row">
+        <div class="row" style="color:white;" >
             <div class="col-md-5">
                 <img th:src="@{/uploads/{path}(path=${furniture.getFilename()})}" class="rounded mx-auto w-100"
                 alt="nema alt">
 
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7" style="color: white">
                 <h2 th:text="${furniture.getFurnitureTitle()}"></h2>
                 <h3 th:text="${furniture.getBrand()}"></h3>
-                <p>Product code: <span th:text="${furniture.getId()}"></span></p>
-                <p class="product-stock" style="color: #54C0A1">In Stock</p>
+                <p>ИД на продукт: <span th:text="${furniture.getId()}"></span></p>
+                <p class="product-stock" style="color: #54C0A1">Достапно</p>
                 <div class="row ml-1">
                     <h6 class="mr-5">
-                        $<span th:text="${furniture.getPrice()}"></span>.00
+                        <span th:text="${furniture.getPrice()}"></span>Денари
                     </h6>
                     <form action="/cart/add" method="post">
                         <button type="submit" name="furnitureId" class="btn btn-success mx-3"
@@ -30,27 +30,27 @@
                     </form>
                 </div>
                 <br>
-                <table class="table">
+                <table class="table" style="color:white;">
                     <tbody>
                     <tr>
-                        <td>Furniture title:</td>
+                        <td>Име на мебел:</td>
                         <td th:text="${furniture.getFurnitureTitle()}"></td>
                     </tr>
                     <tr>
-                        <td>Brand:</td>
+                        <td>Тип:</td>
                         <td th:text="${furniture.getBrand()}"></td>
                     </tr>
                     <tr>
-                        <td>Furniture type:</td>
+                        <td>Дали е 🌟премиум🌟:</td>
                         <td th:text="${furniture.getType()}"></td>
                     </tr>
                     <tr>
-                        <td>Release year:</td>
+                        <td>Година на производство:</td>
                         <td th:text="${furniture.getYear()}"></td>
                     </tr>
                     <tr>
-                        <td>Volume:</td>
-                        <td><span th:text="${furniture.getVolume()}"></span> ml.</td>
+                        <td>Големина:</td>
+                        <td><span th:text="${furniture.getVolume()}"></span> </td>
                     </tr>
                     <tr>
                         <td>Manufacturer country:</td>

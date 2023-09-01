@@ -42,8 +42,7 @@ public class Order {
     @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
 
-    @Column(name = "post_index", nullable = false)
-    private Integer postIndex;
+
 
     @ManyToMany
     private List<Furniture> furnitures = new ArrayList<>();

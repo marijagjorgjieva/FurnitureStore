@@ -5,9 +5,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface FurnitureRepository extends JpaRepository<Furniture, Long> {
 
     List<Furniture> findByIdIn(List<Long> furnituresIds);
@@ -24,16 +25,17 @@ public interface FurnitureRepository extends JpaRepository<Furniture, Long> {
             "ORDER BY furniture.price ASC")
     Page<Furniture> searchFurnitures(String searchType, String text, Pageable pageable);
 
-    @Query("SELECT furniture FROM Furniture furniture " +
+    /*@Query("SELECT furniture FROM Furniture furniture " +
             "WHERE (coalesce(:brands, null) IS NULL OR furniture.brand IN :brands) " +
             "AND (coalesce(:materials, null) IS NULL OR furniture.material IN :materials) " +
             "AND (coalesce(:priceStart, null) IS NULL OR furniture.price BETWEEN :priceStart AND :priceEnd) " +
-            "ORDER BY furniture.price ASC")
-    Page<Furniture> getFurnituresByFilterParams(
+            "ORDER BY furniture.price ASC")*/
+    List<Furniture> findByBrandInAndMaterialInAndPriceBetween(
             List<String> brands,
             List<String> materials,
             Integer priceStart,
-            Integer priceEnd,
-            Pageable pageable);
+            Integer priceEnd);
+
+
 
 }

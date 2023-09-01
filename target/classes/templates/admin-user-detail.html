@@ -28,7 +28,6 @@
                         <div class="col-md-4">
                             <th:block th:replace="fragments/common-fragments :: data-item(title='Address', text=${user.getAddress()})" />
                             <th:block th:replace="fragments/common-fragments :: data-item(title='Phone number', text=${user.getPhoneNumber()})" />
-                            <th:block th:replace="fragments/common-fragments :: data-item(title='Post index', text=${user.getPostIndex()})" />
                         </div>
                     </div>
                     <th:block th:if="${page.getContent().size() == 0}">
@@ -40,15 +39,14 @@
                         <h5 class="text-center">
                             Orders
                         </h5>
-                        <table class="table border text-center">
+                        <table class="table border text-center" style="color: white">
                             <thead class="table-active">
                             <tr>
-                                <th>Order №</th>
-                                <th>Date</th>
-                                <th>City</th>
-                                <th>Address</th>
-                                <th>Post index</th>
-                                <th>Order Summary</th>
+                                <th>Број на нарачка №</th>
+                                <th>Датум</th>
+                                <th>Град</th>
+                                <th>Адреса</th>
+                                <th>Цена</th>
                                 <th></th>
                             </tr>
                             </thead>
@@ -58,11 +56,10 @@
                                 <th th:text="${#temporals.format(order.getDate(), 'yyyy-MM-dd HH:mm')}"></th>
                                 <th th:text="${order.getCity()}"></th>
                                 <th th:text="${order.getAddress()}"></th>
-                                <th th:text="${order.getPostIndex()}"></th>
                                 <th th:text="'$' + ${order.getTotalPrice()} + '0'"></th>
                                 <th>
                                     <a th:href="@{/admin/order/{orderId} (orderId = ${order.getId()})}">
-                                        Show more
+                                        Прикажи повеќе
                                     </a>
                                 </th>
                             </tr>

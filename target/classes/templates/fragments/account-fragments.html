@@ -80,7 +80,6 @@
         <th:block th:replace="fragments/common-fragments :: data-item(title='Град', text=${user.getCity()})" />
         <th:block th:replace="fragments/common-fragments :: data-item(title='Адреса', text=${user.getAddress()})" />
         <th:block th:replace="fragments/common-fragments :: data-item(title='Телефонски број', text=${user.getPhoneNumber()})" />
-        <th:block th:replace="fragments/common-fragments :: data-item(title='Поштенски код', text=${user.getPostIndex()})" />
         <a th:with="isUserEditOpen=${#request.getRequestURI() == '/user/info/edit'}"
            th:href="@{${isUserEditOpen} ? '/user/info' : '/user/info/edit'}"
            role="button">

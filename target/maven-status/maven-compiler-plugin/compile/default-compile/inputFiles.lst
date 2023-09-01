@@ -1,51 +1,47 @@
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\controller\UserController.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\RegistrationService.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\controller\CartController.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\controller\FurnitureController.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\EcommerceApplication.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\configuration\MvcConfiguration.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\UserService.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\dto\request\OrderRequest.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\security\UserDetailsServiceImpl.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\impl\OrderServiceImpl.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\configuration\EncryptionConfiguration.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\dto\request\SearchRequest.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\impl\UserServiceImpl.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\dto\response\UserInfoResponse.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\model\Role.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\AdminService.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\dto\request\PasswordResetRequest.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\utils\ControllerUtils.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\impl\AdminServiceImpl.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\configuration\WebSecurityConfiguration.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\dto\request\EditUserRequest.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\dto\request\ChangePasswordRequest.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\impl\RegistrationServiceImpl.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\controller\AdminController.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\security\UserPrincipal.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\dto\request\UserRequest.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\FurnitureService.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\impl\FurnitureServiceImpl.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\controller\AuthenticationController.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\model\Furniture.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\dto\response\MessageResponse.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\AuthenticationService.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\CartService.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\controller\RegistrationController.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\impl\AuthenticationServiceImpl.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\constants\SuccessMessage.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\repository\OrderRepository.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\model\User.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\configuration\DataInitializer.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\constants\ErrorMessage.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\constants\PathConstants.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\constants\Pages.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\dto\request\FurnitureRequest.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\repository\UserRepository.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\controller\OrderController.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\controller\HomeController.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\model\Order.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\impl\CartServiceImpl.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\repository\FurnitureRepository.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\controller\CommonErrorController.java
-C:\Users\Marija\Desktop\like this\OnlineShop-master\src\main\java\com\proekt\dnick\aldehyde\service\OrderService.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\service\impl\FurnitureServiceImpl.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\model\Role.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\model\dto\request\OrderRequest.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\model\dto\response\MessageResponse.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\model\UserPrincipal.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\service\RegistrationService.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\model\dto\request\EditUserRequest.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\service\impl\UserDetailsServiceImpl.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\model\Furniture.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\configs\utils\ControllerUtils.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\EcommerceApplication.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\service\CartService.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\service\impl\AdminServiceImpl.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\service\impl\CartServiceImpl.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\service\impl\RegistrationServiceImpl.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\service\OrderService.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\configs\EncryptionConfiguration.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\repository\OrderRepository.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\web\controller\HomeController.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\model\User.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\web\controller\RegistrationController.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\configs\constants\SuccessMessage.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\model\dto\request\SearchRequest.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\model\dto\response\UserInfoResponse.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\configs\MvcConfiguration.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\model\dto\request\UserRequest.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\web\controller\CartController.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\model\dto\request\ChangePasswordRequest.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\web\controller\OrderController.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\web\controller\AdminController.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\repository\UserRepository.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\service\impl\OrderServiceImpl.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\web\controller\UserController.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\configs\DataInitializer.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\model\Order.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\web\controller\FurnitureController.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\web\controller\CommonErrorController.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\configs\constants\Pages.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\configs\constants\PathConstants.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\service\impl\UserServiceImpl.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\configs\WebSecurityConfiguration.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\model\dto\request\FurnitureRequest.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\service\AdminService.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\service\FurnitureService.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\service\UserService.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\configs\constants\ErrorMessage.java
+D:\Plagijati\FurnitureStore\src\main\java\com\proekt\dnick\aldehyde\repository\FurnitureRepository.java

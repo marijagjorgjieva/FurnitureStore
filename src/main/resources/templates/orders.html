@@ -18,14 +18,14 @@
                     <div th:insert="~{fragments/common-fragments :: pagination}"></div>
                     <th:block th:if="${page.getContent().size() == 0}"
                               th:insert="~{fragments/common-fragments :: empty-result(text='Orders not found')}"/>
-                    <table th:unless="${page.getContent().size() == 0}" class="table mt-4 border text-center">
+                    <table th:unless="${page.getContent().size() == 0}" class="table mt-4 border text-center" style="color: white">
                         <thead class="table-active">
                         <tr>
-                            <th>Order №</th>
-                            <th>Date</th>
-                            <th>Customer</th>
-                            <th>Email</th>
-                            <th>Sum, $</th>
+                            <th>Број на нарачка</th>
+                            <th>Датум</th>
+                            <th>Клиент</th>
+                            <th>Мејл</th>
+                            <th>Вкупно</th>
                             <th></th>
                         </tr>
                         <tbody th:each="order : ${page.getContent()}">
@@ -38,14 +38,14 @@
                             <th:block sec:authorize="hasAuthority('ADMIN')">
                                 <th>
                                     <a th:href="@{/admin/order/{orderId} (orderId = ${order.getId()})}">
-                                        Show more
+                                        Прикажи повеќе
                                     </a>
                                 </th>
                             </th:block>
                             <th:block sec:authorize="hasAuthority('USER')">
                                 <th>
                                     <a th:href="@{/order/{orderId} (orderId = ${order.getId()})}">
-                                        Show more
+                                        Прикажи повеќе
                                     </a>
                                 </th>
                             </th:block>

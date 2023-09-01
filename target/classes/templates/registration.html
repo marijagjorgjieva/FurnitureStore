@@ -9,14 +9,14 @@
         <div class="container py-1 srednotemno shadow-sm card-height rawrXD">
             <form method="post" action="/registration" style="color:black;">
                 <div class="container mt-5  center-content2" >
-                    <div class="row" >
+                    <div class="row" style="color:white;" >
                         <div class="col-md-12">
-                            <h4 class="mr-2 text-center font-weight-bold" style="font-size: 24px;">
+                            <h4 class="mr-2 text-center font-weight-bold" style="font-size: 24px; color: black;">
                                 <i class=""></i>
                                 РЕГИСТРАЦИЈА
                             </h4>
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">E-меил: </label>
+                                <label class="col-sm-4 col-form-label"  style="color: black;">E-меил: </label>
                                 <i class="fas fa-envelope" style="position: relative; top: 8px"></i>
                                 <div class="col-sm-7">
                                     <input type="email" name="email" th:value="${user} ? ${user.email} : ''"
@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">Име: </label>
+                                <label class="col-sm-4 col-form-label" style="color: black;">Име: </label>
                                 <i class="fas fa-user" style="position: relative; top: 8px"></i>
                                 <div class="col-sm-7">
                                     <input type="text" name="firstName" th:value="${user} ? ${user.firstName} : ''"
@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">Пасворд: </label>
+                                <label class="col-sm-4 col-form-label" style="color: black;">Лозинка: </label>
                                 <i class="fas fa-lock" style="position: relative; top: 8px"></i>
                                 <div class="col-sm-7">
                                     <input type="password" name="password" class="form-control"
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">Потврди лозинка: </label>
+                                <label class="col-sm-4 col-form-label" style="color: black;">Потврди лозинка: </label>
                                 <i class="fas fa-lock" style="position: relative; top: 8px"></i>
                                 <div class="col-sm-7">
                                     <input type="password" name="password2" class="form-control"
@@ -57,7 +57,7 @@
                                     Регистрирај се
                                 </button>
                             </div>
-                            <p style="text-align: center; margin-bottom: 0;">Имаш сметка?</p>
+                            <p style="text-align: center; margin-bottom: 0; color: black;" >Имаш сметка?</p>
 
                             <div class="form-group row col-md-12 p-0">
                                 <a href="/login" class="col-md-12" style="display: block;">

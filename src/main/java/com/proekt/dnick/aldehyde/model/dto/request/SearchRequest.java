@@ -11,4 +11,5 @@ public class SearchRequest {
     private Integer price = 0;
     private String searchType;
     private String text;
+
 }

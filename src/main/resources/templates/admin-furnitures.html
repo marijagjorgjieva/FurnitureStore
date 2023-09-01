@@ -16,9 +16,9 @@
                     <th:block th:replace="fragments/common-fragments :: alert-message"/>
                     <div class="mt-3" th:insert="~{fragments/common-fragments :: pagination}"></div>
                     <form  style=" color:white;" method="get" action="/static">
-                        <div class="row" th:fragment="list">
+                        <div class="row" style="color:white;" th:fragment="list">
                             <th:block th:if="${page.getContent().size() == 0}"
-                                      th:insert="~{fragments/common-fragments :: empty-result(text='Furnitures not found')}"/>
+                                      th:insert="~{fragments/common-fragments :: empty-result(text='Не е пронајден мебел')}"/>
                             <div class="col-lg-3"
                                  th:unless="${page.getContent().size() == 0}"
                                  th:each="furniture : ${page.getContent()}">

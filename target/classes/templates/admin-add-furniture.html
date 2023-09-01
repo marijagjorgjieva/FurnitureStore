@@ -24,12 +24,11 @@
                                 value=(${furniture} ? ${furniture.furnitureTitle} : ''),
                                 error=(${furnitureTitleError})
                             )"/>
-                            <th:block th:replace="fragments/account-fragments :: add-furniture-input(
+                            <th:block th:replace="fragments/account-fragments :: add-furniture-select(
                                 title='За каде?',
                                 name='brand',
-                                placeholder='Внеси тип на мебел',
-                                value=(${furniture} ? ${furniture.brand} : ''),
-                                error=(${brandError})
+                                options=(${ {'Дневни', 'Кујни', 'Спални','Детски','Претсобја'} }),
+                                error=(${BrandError})
                             )"/>
                         </div>
                         <div class="form row mt-3">
@@ -67,7 +66,7 @@
                             <th:block th:replace="fragments/account-fragments :: add-furniture-select(
                                 title='Материјал',
                                 name='material',
-                                options=(${ {'Иверка', 'Оплеменeт медијапан', 'Фурниран медијапан','Масивно дрво','Кожа','Челик','Поликарбонат :D'} }),
+                                options=(${ {'Иверка',  'Фурниран медијапан','Масивно дрво','Кожа','Челик','Поликарбонат :D'} }),
                                 error=(${materialError})
                             )"/>
 
